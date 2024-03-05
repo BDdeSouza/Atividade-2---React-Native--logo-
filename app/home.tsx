@@ -1,11 +1,24 @@
 import { Text } from 'react-native'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
+import ListScreen from '../components/listScreen'
+import StyledButton from '../components/StyledButton'
+
+
 
 export default function Home(){
+
+    const handleLogin = () => {
+        router.push('/')
+      }
+
     return (
         <>
-        <Text>Login com sucesso!</Text>
-        <Link href="/">Voltar ao login</Link>
+        <ListScreen/>
+        <StyledButton 
+      title='Volttar a tela de login'
+      onPress={handleLogin}
+      color='red'
+      />
         </>
     )
 }
